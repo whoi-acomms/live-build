@@ -1,0 +1,7 @@
+#!/bin/sh  
+
+echo "I: create acomms user"
+adduser --gecos acomms --disabled-login acomms
+
+echo "I: set acomms user password"
+echo "acomms:acomms" | chpasswd

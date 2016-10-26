@@ -1,0 +1,3 @@
+#!/bin/sh 
+
+echo "T0:2345:respawn:/sbin/getty -L 115200 ttyO2 vt102" >> /etc/inittab

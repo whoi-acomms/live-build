@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ln -s /usr/bin/zile /usr/local/bin/emacs

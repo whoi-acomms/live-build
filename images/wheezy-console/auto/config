@@ -1,0 +1,24 @@
+#!/bin/sh
+set -e
+
+export LB_BOOTSTRAP_FLAVOUR="minbase"
+lb config noauto \
+ --apt-indices none \
+ --architectures armhf \
+ --archive-areas 'main contrib non-free' \
+ --binary-filesystem ext4 \
+ --binary-images tar \
+ --bootstrap-qemu-arch armhf \
+ --bootstrap-qemu-static /usr/bin/qemu-arm-static \
+ --chroot-filesystem none \
+ --compression gzip \
+ --distribution wheezy \
+ --iso-volume "WHOI Acomms Gumstix Wheezy" \
+ --iso-publisher "WHOI Acomms: http://acomms.whoi.edu" \
+ --linux-flavours none \
+ --linux-packages none \
+ --mode debian \
+ --swap-file-path /swapfile \
+ --system normal
+
+cp -rf customization/* config/

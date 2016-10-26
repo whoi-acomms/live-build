@@ -1,0 +1,113 @@
+# code compilation
+build-essential
+libprotobuf-dev
+libboost-dev
+autoconf
+automake 
+protobuf-compiler 
+zlib1g-dev 
+libncurses5-dev 
+pkg-config 
+
+# VCS
+git
+subversion 
+
+# shells
+bash
+
+# remote shells
+openssh-server
+openssh-client 
+lrzsz 
+rsh-server 
+rsh-client 
+
+# system tools
+sysvinit
+initramfs-tools
+cpufrequtils 
+module-init-tools 
+memtester 
+info 
+cron 
+locales 
+apt 
+apt-utils 
+sudo 
+adduser 
+udev 
+psmisc 
+busybox-syslogd 
+logrotate 
+watchdog 
+procps 
+
+# ethernet/Wifi
+wireless-tools
+libertas-firmware
+wpasupplicant
+ethtool
+libpcap0.8 
+openbsd-inetd 
+tcpd 
+update-inetd 
+isc-dhcp-client 
+netbase 
+ifupdown 
+iproute 
+wget 
+iputils-ping 
+traceroute 
+netcat-traditional 
+socat
+net-tools 
+iptables 
+crda 
+
+# python
+python
+python-serial
+python-setuptools
+python-pip
+python-argparse 
+python-dev 
+
+# text editors
+vim
+vim-common 
+zile 
+nano 
+vim-tiny 
+less 
+
+# audio
+alsa-utils
+alsa-base
+libasound2-dev
+
+# serial
+ckermit
+minicom
+setserial 
+telnetd 
+i2c-tools 
+gpsd 
+pps-tools 
+ppp 
+
+# encryption
+gpgv 
+libgpg-error0 
+gnupg 
+
+# misc 
+install-info 
+whiptail 
+tasksel 
+tasksel-data 
+groff-base 
+bsdmainutils 
+cpio 
+readline-common 
+dos2unix 

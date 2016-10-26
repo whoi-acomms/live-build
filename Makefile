@@ -22,17 +22,17 @@ KERNEL := vmlinux
 
 CROSS_COMPILE := arm-linux-gnueabihf-
 
-UBOOT_GIT := git://github.com/gumstix/u-boot.git
+UBOOT_GIT := git://github.com/whoi-acomms/u-boot.git
 UBOOT_SRC_DIR := $(PWD)/u-boot
-UBOOT_BRANCH := v2015.07
+UBOOT_BRANCH := v2015.07-whoi
 
 UBOOT_CONFIG_overo := omap3_overo_defconfig
 UBOOT_CONFIG_duovero := duovero_defconfig
 UBOOT_CONFIG_pepper := pepper_defconfig
 
-LINUX_GIT := git://github.com/gumstix/linux.git
+LINUX_GIT := git://github.com/whoi-acomms/linux.git
 LINUX_SRC_DIR := $(PWD)/linux
-LINUX_BRANCH := yocto-v3.18.y
+LINUX_BRANCH := whoi-3.5.7
 
 # don't pass down MACHINE---linux doesn't like it
 MAKEOVERRIDES =
