@@ -19,6 +19,7 @@ lb config noauto \
  --linux-packages none \
  --mode debian \
  --swap-file-path /swapfile \
- --system normal
+ --system normal \
+ --initsystem sysvinit \
 
 cp -rf customization/* config/

@@ -38,7 +38,7 @@ sudo
 adduser 
 udev 
 psmisc 
-busybox-syslogd 
+rsyslog
 logrotate 
 watchdog 
 procps 
