@@ -1,42 +1,32 @@
-Ubuntu on Gumstix
+Debian/Ubuntu on Gumstix
 =================
 
-This repository provides a method to build an Ubuntu image for various
-Gumstix boards such as Overo COMs, DuoVero COMs, and the Pepper SBC.
+This repository was forked from https://github.com/gumstix/live-build to build images for the Gumstix
+Overo on the WHOI-Acomms Gumstix Carrier board: http://acomms.whoi.edu/micro-modem/gumstix-computer-interface-boards/
 
-Prebuilt Images
----------------
-
-If you want to get started with Ubuntu using one of our prebuilt images, you can download
-these prebuilt console images for Ubuntu 15.04 for [Overo][8], [Duovero][9] and [Pepper][10].
-Flash them on to the SD card and you are good to go!
-
-	# First unmount the SD card before flashing the image
-	$ xz -d <image.xz> # Uncompress the image
-	$ sudo dd if=/path/to/the/image/file of=/dev/sdX bs=4K
+This repository provides a method to build a Debian or Ubuntu image for various
+Gumstix boards such as Overo COMs, DuoVero COMs, and the Pepper SBC. Currently, the WHOI image 
+is only set up for the Overo COMs.
 
 Build Instructions
 ------------------
 
-If you want to build everything from scratch:
-
-1. Install the required tools on your host system:
+1. Install the required tools on your host system (preferably the same as the OS you are building for the Gumstix,
+but newer versions of Ubuntu will generally work):
 
         $ sudo apt-get install -y git live-build qemu-user-static gcc-arm-linux-gnueabihf
 
 2. Fetch this repository.
 
-        $ git clone git://github.com/gumstix/live-build.git
+        $ git clone https://github.com/whoi-acomms/live-build.git
 	$ cd live-build
 
 3. Choose an image type and machine for which to build.  This repository
-   supports the Gumstix *overo*, *duovero*, and *pepper* machines.
+   supports the Gumstix *overo* machines.
 
-	Image Name      | Description
-	----------------|-------------
-	*vivid-console* | A developer-oriented console image of Ubuntu 15.04
-	*vivid-lxde*    | Ubuntu 15.04 "Vivid Vervet" with a lightweight desktop environment (LXDE)
-	*sid-console*	| Debian Sid console image
+	Image Name       | Description
+	-----------------|-------------
+	*wheezy-console* | A developer-oriented console image of Debian 7 (Wheezy)
 
 4. *Make* it!  You will be prompted for a super-user password then go get some
    coffee.
@@ -94,7 +84,7 @@ and the installed packages, images can provide a variety of different desktop
 environments or a stripped down console environement. Start customizing by
 copying an existing image directory and adjusting the *config*.
 
-    $ cp -r images/vivid-console images/super-gumstix
+    $ cp -r images/wheezy-console images/super-gumstix
     $ sensible-editor images/super-gumstix/auto/config
     $ make MACHINE=<machine> IMAGE=super-gumstix -j4
 
@@ -106,7 +96,7 @@ To include additional packages in a custom image, simply add the package names
 (as the would be passed in an *apt-get*) to the list of packages in the
 *customization* directory. Carrying on from the previous customization:
 
-    $ echo 'vim' >> images/super-gumstix/customiztion/package-lists/gumstix.list.chroot
+    $ echo 'vim' >> images/super-gumstix/customization/package-lists/gumstix.list.chroot
     $ make MACHINE=<machine> IMAGE=super-gumstix -j4
 
 As the contents of the *customization* directory get copied over to the
@@ -127,8 +117,8 @@ It is also possible to do some boot-time configuration using the *live-config*
 ------------------------------------------------------------------------------
 **Note:**
 
-This is not a *build-everything-from-scratch* tool.  This tool
-assembles a root file system from pre-compiled packages and provides a
+This is not a *build-everything-from-scratch* tool for the root filesystem.
+This tool assembles a root file system from pre-compiled packages and provides a
 useful framework for adjusting configuration files.  If something
 additional needs to be compiled, there are three options:
  * compile it natively (and possibly, create a .deb for future inclusion)
