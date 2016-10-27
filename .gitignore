@@ -4,3 +4,5 @@ linux
 linux-*.deb
 machines/*/MLO
 machines/*/u-boot.img
+kernelrelease.txt
+vmlinux

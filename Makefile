@@ -102,9 +102,12 @@ $(LINUX_SRC_DIR)/.config: $(machine_path)/defconfig | $(LINUX_SRC_DIR)
 $(KERNEL): $(LINUX_SRC_DIR)/.config $(shell find $(LINUX_SRC_DIR) -type f 2>/dev/null)
 	@$(MAKE) -C $(LINUX_SRC_DIR) ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE) KBUILD_DEBARCH=armhf deb-pkg LOCALVERSION=""
 	@cp $(LINUX_SRC_DIR)/vmlinux $(KERNEL)
+	@$(MAKE) --no-print-directory -C $(LINUX_SRC_DIR) ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE) kernelrelease > kernelrelease.txt
+	@sed -i "s/\(kernel_file=vmlinuz-\).*/\1$$(cat kernelrelease.txt)/" $(UENV)
+	@sed -i "s/\(initrd_file=initrd.img-\).*/\1$$(cat kernelrelease.txt)/" $(UENV)
 
 linux: $(KERNEL)
 
 clean-linux:
-	@-rm -f linux-*.deb
+	@-rm -f linux-*.deb kernelrelease.txt
 	@-$(MAKE) -C $(LINUX_SRC_DIR) ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE) mrproper
