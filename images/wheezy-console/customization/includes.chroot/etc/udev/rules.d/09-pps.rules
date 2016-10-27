@@ -1,0 +1,1 @@
+KERNEL=="pps0", OWNER="root", GROUP="tty", MODE="0660", SYMLINK+="gpspps0"

@@ -4,4 +4,8 @@
 # at boot time, one per line. Lines beginning with "#" are ignored.
 # Parameters can be specified after the module name.
 
+# Ethernet gadget - ethernet over USB (use OTG port)
 g_ether
+
+# PPS on GPIO 186 - /dev/pps0
+pps_gpio
