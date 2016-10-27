@@ -1,6 +1,6 @@
 initrd_addr=0x88080000
-kernel_file=vmlinuz-3.5.7whoi-acomms-g6cf51c2
-initrd_file=initrd.img-3.5.7whoi-acomms-g6cf51c2
+kernel_file=vmlinuz-3.5.7whoi-acomms-gf361b69
+initrd_file=initrd.img-3.5.7whoi-acomms-gf361b69
 mmcrootfstype=ext4
 
 loadfiles=run loadkernel; run loadinitrd
