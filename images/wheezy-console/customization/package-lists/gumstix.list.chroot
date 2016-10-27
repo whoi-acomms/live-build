@@ -22,6 +22,7 @@ openssh-client
 lrzsz 
 rsh-server 
 rsh-client 
+screen
 
 # system tools
 sysvinit
@@ -64,6 +65,7 @@ socat
 net-tools 
 iptables 
 crda 
+ntp
 
 # python
 python
@@ -89,6 +91,7 @@ libasound2-dev
 # serial
 ckermit
 minicom
+picocom
 setserial 
 telnetd 
 i2c-tools 
