@@ -46,6 +46,7 @@ procps
 
 # ethernet/Wifi
 wireless-tools
+firmware-atheros
 libertas-firmware
 wpasupplicant
 ethtool
